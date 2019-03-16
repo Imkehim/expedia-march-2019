@@ -39,14 +39,17 @@ URL: https://slack.com/api/conversations.members?token=<workspaceToken>&channel=
 
 Get info on your team's private channels.
 `group.history` - Fetches history of messages and events from a private channel
+
 `group.replies` - Retrieve a thread of messages posted to a private channel
 
 Get info on your direct messages.
 `im.history` - Fetches history of messages and events from direct message channel
+
 `im.replies` - Retrieve a thread of messages posted to a direct message conversation
 
 Get info on your multiparty direct messages.
 `mpim.history` - Fetches history of messages and events from a multiparty direct message
+
 `mpim.replies` - Retrieve a thread of messages posted to a direct message conversation from a multiparty direct message
 
 Search your team's files and messages.
