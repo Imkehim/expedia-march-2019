@@ -77,4 +77,4 @@ https://slack.com/api/users.list?token=<workspaceToken>&pretty=1
 `users.lookupByEmail` - Find a user with an email address
 URL: to be determined
 
-It's important to note that .history methods only give you the parent messages. To see any threads of replies you need to use .replies
+It's important to note that `.history` methods only give you the parent messages. To see any threads of replies you need to use `.replies`.
