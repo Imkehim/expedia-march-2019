@@ -1,8 +1,9 @@
 package runner;
 
+// TODO workspaceToken and channelId have to be set as environment variables
+
 
 import client.SlackClient;
-import data.DataParser;
 import importer.SlackImporter;
 import tokeninput.InputReader;
 
@@ -16,10 +17,8 @@ public class Runner {
                 System.getenv("channelId")
         );
 
-        final DataParser dataParser = new DataParser();
-
         SlackImporter slackImporter = new SlackImporter(
-                new InputReader(slackClient, dataParser)
+                new InputReader(slackClient)
         );
             slackImporter.run();
     }

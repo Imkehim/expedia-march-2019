@@ -23,7 +23,7 @@ public class SlackClient {
                     .queryString("inclusive", 1)
                     .queryString("pretty", 1)
                     .asString();
-//            System.out.println("httpResponse = " + httpResponse.getBody());
+            System.out.println("httpResponse = " + httpResponse.getBody());
             return httpResponse.getBody();
         } catch (UnirestException e) {
             e.printStackTrace();

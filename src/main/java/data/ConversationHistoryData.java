@@ -1,5 +1,9 @@
 package data;
 
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+
 public class    ConversationHistoryData {
     private final String memberName;
     private final String message;
@@ -20,6 +24,10 @@ public class    ConversationHistoryData {
     }
 
     public String datePosted() {
-        return datePosted;
+        String[] split = datePosted.split("\\.");
+        Long dateInMillis = Long.parseLong(split[0]);
+        Instant instant = Instant.ofEpochMilli(dateInMillis * 1000);
+        LocalDateTime localDateTime = LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
+        return localDateTime.toString();
     }
 }
