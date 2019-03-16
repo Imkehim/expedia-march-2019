@@ -1,6 +1,6 @@
 package tokeninput;
 
-import client.SlackClient;
+import client.SlackConversationClient;
 import data.ConversationHistoryData;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -9,16 +9,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
-public class InputReader {
+public class InputConversationsReader {
 
-    private final SlackClient slackClient;
+    private final SlackConversationClient slackConversationClient;
 
-    public InputReader(SlackClient slackClient) {
-        this.slackClient = slackClient;
+    public InputConversationsReader(SlackConversationClient slackConversationClient) {
+        this.slackConversationClient = slackConversationClient;
     }
 
     public Object readConversations() {
-        String jsonData = slackClient.getJsonData();
+        String jsonData = slackConversationClient.getJsonData();
 
         JSONObject topLevelJsonObject = new JSONObject(jsonData);
         JSONArray deeperObject = (JSONArray) topLevelJsonObject.get("messages");

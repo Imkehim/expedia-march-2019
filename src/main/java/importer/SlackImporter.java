@@ -1,16 +1,20 @@
 package importer;
 
-import tokeninput.InputReader;
+import tokeninput.InputConversationsReader;
+import tokeninput.InputMembersReader;
 
 public class SlackImporter {
 
-    private final InputReader inputReader;
+    private final InputConversationsReader inputConversationsReader;
+    private final InputMembersReader inputMembersReader;
 
-    public SlackImporter(InputReader inputReader) {
-        this.inputReader = inputReader;
+    public SlackImporter(InputConversationsReader inputConversationsReader, InputMembersReader inputMembersReader) {
+        this.inputConversationsReader = inputConversationsReader;
+        this.inputMembersReader = inputMembersReader;
     }
 
     public void run() {
-        inputReader.readConversations();
+        inputConversationsReader.readConversations();
+        inputMembersReader.readUsersList();
     }
 }
