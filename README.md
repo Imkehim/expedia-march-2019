@@ -15,6 +15,7 @@ The app is able to get raw json from the api and extract the meaningful data fro
 ### Future
 
 The POJO can be used to persist the interesting data in the database. 
+
 A call should be made to the student records table in the charity's database to be able to cross check students' activity and also isolate non-participating students. These could be flagged up to make it clearer where volunteers may need to intervene or reach out.
 
 ##### other useful calls
