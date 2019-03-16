@@ -1,9 +1,9 @@
 package data;
 
-public class UserData {
+public class MemberIdData {
     private final String memberId;
 
-    public UserData(String memberId) {
+    public MemberIdData(String memberId) {
         this.memberId = memberId;
     }
 

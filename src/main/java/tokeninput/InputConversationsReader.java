@@ -23,7 +23,7 @@ public class InputConversationsReader {
         JSONObject topLevelJsonObject = new JSONObject(jsonData);
         JSONArray deeperObject = (JSONArray) topLevelJsonObject.get("messages");
 
-        List<ConversationHistoryData> messageList = new ArrayList<>();
+        List<ConversationHistoryData> messages = new ArrayList<>();
 
         IntStream.range(0, deeperObject.length()).mapToObj(
                 i -> (JSONObject) deeperObject.get(i)).filter(
@@ -33,15 +33,15 @@ public class InputConversationsReader {
             String text = object.getString("text");
             String timeStamp = object.getString("ts");
             ConversationHistoryData conversationHistoryData = new ConversationHistoryData(user, text, timeStamp);
-            messageList.add(conversationHistoryData);
+            messages.add(conversationHistoryData);
         });
 
-        IntStream.range(0, messageList.size()).forEachOrdered(i -> {
-            System.out.println("date = " + messageList.get(i).datePosted());
-            System.out.println("user id = " + messageList.get(i).memberName());
-            System.out.println("message = " + messageList.get(i).message() + "\n");
+        IntStream.range(0, messages.size()).forEachOrdered(i -> {
+            System.out.println("date = " + messages.get(i).datePosted());
+            System.out.println("user id = " + messages.get(i).memberName());
+            System.out.println("message = " + messages.get(i).message() + "\n");
         });
 
-        return messageList;
+        return messages;
     }
 }

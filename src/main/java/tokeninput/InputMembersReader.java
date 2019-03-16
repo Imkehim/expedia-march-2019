@@ -1,9 +1,12 @@
 package tokeninput;
 
 import client.SlackMembersClient;
+import data.MemberIdData;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.IntStream;
 
 public class InputMembersReader {
@@ -20,9 +23,16 @@ public class InputMembersReader {
         JSONObject membersList = new JSONObject(jsonData);
         JSONArray jsonArray = (JSONArray) membersList.get("members");
 
+        List<MemberIdData> memberIds = new ArrayList<>();
+        String memberId = "";
+
         IntStream.range(0, jsonArray.length())
                 .mapToObj(i -> "member id " + (i + 1) + " = " + jsonArray.get(i))
                 .forEachOrdered(System.out::println);
-        return jsonArray;
+
+        MemberIdData memberIdData = new MemberIdData(memberId);
+        memberIds.add(memberIdData);
+
+        return memberIds;
     }
 }

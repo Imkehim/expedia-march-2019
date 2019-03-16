@@ -1,13 +1,15 @@
 package runner;
 
-// TODO workspaceToken and channelId have to be set as environment variables
+// TODO 'workspaceToken', 'channelId' and 'user' have to be set as environment variables in order to run app as is.
 
 
 import client.SlackConversationClient;
 import client.SlackMembersClient;
+import client.SlackUserInfoClient;
 import importer.SlackImporter;
 import tokeninput.InputConversationsReader;
 import tokeninput.InputMembersReader;
+import tokeninput.InputUserInfoReader;
 
 public class Runner {
 
@@ -25,9 +27,16 @@ public class Runner {
                 System.getenv("channelId")
         );
 
+        SlackUserInfoClient slackUserInfoClient = new SlackUserInfoClient(
+                "https://slack.com/api/users.info?token=",
+                System.getenv("workspaceToken"),
+                System.getenv("user")
+        );
+
         SlackImporter slackImporter = new SlackImporter(
                 new InputConversationsReader(slackConversationClient),
-                new InputMembersReader(slackMembersClient)
+                new InputMembersReader(slackMembersClient),
+                new InputUserInfoReader(slackUserInfoClient)
         );
         slackImporter.run();
     }
