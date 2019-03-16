@@ -8,10 +8,10 @@ It will be able to scrape other APIs too – for this the base URL needs to be e
 
 Workspace tokens are kept local as Environment variable, which need to be set in your ide. Once a frontend is implemented these can be queried when logging in.
 
-###Currently
+##Currently
 
 The app is able to get raw json from the api and extract the meaningful data from the json string and store these as a POJO.
 
-###Future
+##Future
 
 The POJO can be used to persist the interesting data in the database. 
