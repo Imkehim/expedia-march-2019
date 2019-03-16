@@ -18,7 +18,7 @@ The POJO can be used to persist the interesting data in the database.
 
 A call should be made to the student records table in the charity's database to be able to cross check students' activity and also isolate non-participating students. These could be flagged up to make it clearer where volunteers may need to intervene or reach out.
 
-##### other useful calls
+##### useful api methods
 
 Get info on your team's Slack channels, create or archive channels, invite users, set the topic and purpose, and mark a channel as read.
 `channels.history` - Fetches history of messages and events from a channel
