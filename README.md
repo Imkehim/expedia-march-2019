@@ -2,15 +2,19 @@
 
 The Charity Code Your Future wants to be able to track student activity on their Slack workspace.
 
-## This App scrapes the conversation.histories API
+## This App is set up to scrape the following APIs
 
-It will be able to scrape other APIs too – for this the base URL needs to be edited to contain the method name for the api in question. (Please note different APIs ask for different Ids. Histories wants the channel id. Others may ask for user Ids)
+`conversations.histories` to get all messages in a channel
+`conversations.members` to get all member ids in that channel
+`users.info` to cross reference the user details when feeding in a member's id.
 
-Workspace tokens are kept local as Environment variable, which need to be set in your ide. Once a frontend is implemented these can be queried when logging in.
+It can be adjusted to scrape other APIs too – for this the base URL needs to be edited to contain the method name for the api in question. (Please note different APIs ask for different Ids. Histories wants the channel id. Others may ask for user Ids). See below for more details.
+
+Workspace tokens are kept local as Environment variable, which need to be set on your local machine. Once a frontend is implemented these can be queried when logging in.
 
 ### Currently
 
-The app is able to get raw json from the api and extract the meaningful data from the json string and store these as a POJO.
+The app is able to get raw json from the api and extract meaningful data from the json string and store these as a POJO.
 
 ### Future
 
@@ -18,7 +22,11 @@ The POJO can be used to persist the interesting data in the database.
 
 A call should be made to the student records table in the charity's database to be able to cross check students' activity and also isolate non-participating students. These could be flagged up to make it clearer where volunteers may need to intervene or reach out.
 
-##### useful api methods
+The database that was set up by a separate group at the hack day has to be integrated with the app.
+
+To view data, aws services can be used out of the box.
+
+#### Other potentially useful Slack api methods
 
 Get info on your team's Slack channels, create or archive channels, invite users, set the topic and purpose, and mark a channel as read.
 `channels.history` - Fetches history of messages and events from a channel
