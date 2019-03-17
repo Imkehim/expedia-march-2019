@@ -11,9 +11,9 @@ The Charity Code Your Future wants to be able to track student activity on their
 `users.info` to cross reference the user details when feeding in a member's id.
 
 
-It can be adjusted to scrape other APIs too – for this the base URL needs to be edited to contain the method name for the api in question. (Please note different APIs ask for different Ids. Histories wants the channel id. Others may ask for user Ids). See below for more details.
+It can be adjusted to scrape other APIs too – for this the base URL needs to be edited to contain the method name for the api in question. (Please note different APIs ask for different Ids. Histories wants the channel id. Others may ask for user Ids). See below for more details. And new data handling classes need to be created similar to the existing ones.
 
-Workspace tokens are kept local as Environment variable, which need to be set on your local machine. Once a frontend is implemented these can be queried when logging in.
+Workspace and channel id tokens are kept local as Environment variables, which need to be set on your local machine. Once a frontend is implemented these can be queried when logging in.
 
 ### Currently
 
