@@ -5,8 +5,11 @@ The Charity Code Your Future wants to be able to track student activity on their
 ## This App is set up to scrape the following APIs
 
 `conversations.histories` to get all messages in a channel
+
 `conversations.members` to get all member ids in that channel
+
 `users.info` to cross reference the user details when feeding in a member's id.
+
 
 It can be adjusted to scrape other APIs too – for this the base URL needs to be edited to contain the method name for the api in question. (Please note different APIs ask for different Ids. Histories wants the channel id. Others may ask for user Ids). See below for more details.
 
