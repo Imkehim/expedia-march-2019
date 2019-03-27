@@ -1,4 +1,4 @@
-package tokeninput;
+package dataextraction;
 
 import client.SlackUserInfoClient;
 import data.UserInfoData;
